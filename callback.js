@@ -135,3 +135,4 @@
     Promise.all([getUsers(),getPost(1)]) 
         .then(console.log)//then(data=>console.log) ikisi de çalıştırır!
         .catch(console.log);
+        
