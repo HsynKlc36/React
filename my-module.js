@@ -31,4 +31,4 @@ surname:"Kılıç"}]
 export const topla=(a,b)=>a+b;
 export const cikar=(a,b)=>a-b;
 
-// export default topla;
+// export default topla; default ile tek bir tane dışa aktarabilirsiniz! ve yakalarken ise import topla,{cikar,text,user} from './my-module' deriz böylelikle toplanın default olarak dışa aktarıldığını da belirtmiş olduk!
