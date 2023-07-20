@@ -3,7 +3,7 @@ import './App.css';
 import Header,{surname}  from './components/Header'; 
 import Body  from './components/body'; 
 import { Klc as MyKlc } from './components/bodysection';//burada Klc değişkenleri çakışmaktadır.Yani Body içerisine import ettiğimiz Klc değişkeni body'i buraya import ettiğimiz için dolaylı yoldan buraya gelmektedir ve direkt olarakta Klc'yi import ettiğimiz için bu iki Klc iki tane aynı isimde farklı import gibi algılanır ve çakışır! bu yüzden isimleri birbirinden farklı olmalıdır! bunun için as keyword'ünü kullanabilirsiniz!
-
+import User from './components/user'
 
 const name='huseyin';//bu şekilde companentlerde değişkenler tanımlarız ve jsx de bunları render edebiliriz!
 
@@ -32,6 +32,21 @@ const isLoggedIn=true;
 //     </div>
 //   );
 // }
+const friends=[
+{
+  id:1,
+  name:'hsyn'
+},
+{
+  id:2,
+  name:'klc'
+},
+{
+  id:3,
+  name:'huso'
+}
+]
+
 
 
 function App() {
@@ -41,6 +56,8 @@ function App() {
      <Header/>
      <div><Body/></div>
       <h1>{MyKlc}</h1> {/*burada değişken aldığımız için {} içerisinde bildirmeliyiz fakat function olsaydı </> içerisinde bildirirdik!Buna dikkat edilmesi gerekir! */}
+      <User name='hsyn' surname='klc' isLogIn={true} number1={2} friends={friends} 
+      address={{title:'ev', town:'esenyurt',city:'istanbul',zip:34000}}/>
       <h1>{name}</h1>
       <h1>{`${name} ve ${surname}`}</h1>
       <h1>{`benim adım ${name}`}</h1>
