@@ -1,8 +1,6 @@
 function Header(){
-    return(
-    <div>
-        <h1>ben bir Header'ım!!</h1>
-    </div>
+    return( 
+        <h1>ben bir Header'ım!!</h1>  
 )}
 
 //yukarıdaki yazım şekli JSX olarak geçmektedir!

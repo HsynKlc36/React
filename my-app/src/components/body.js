@@ -1,10 +1,12 @@
 import { Klc  } from "./bodysection";
  function Body(){
     return(
-        <div>
-            devhell
+        <>
+         devhell
             <p>{Klc}</p>
-        </div>
+        </>
+           
+        
  
     )
  }
