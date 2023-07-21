@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button>increase</button>
+    <button>decrease</button>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<script>
+    $(()=>{
+        $('button').on('click',()=>{
+            $('h1').html(1);
+        });
+    });
+</script>
+</html>        
+//burada jquery örneği yaptık ve state'ler değişmediği halde yani butona tıkladığımda h1 1 kez değişti fakat sonraki her click' lemede tekrar tekrar bu alanı render eder! fakat bu durum react'ta söz konusu değildir!state' ler ile yönettiğimiz için state'de değişiklik olmadığı taktirde render etmez!
