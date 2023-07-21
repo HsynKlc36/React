@@ -5,7 +5,9 @@ function InputExample(){
     const [form,setForm]=useState({name:'',surname:'soyad giriniz'})
     const onChangeInput=(e)=>{
         setForm({...form,[e.target.name]:e.target.value})
-  
+        //setForm({...form,name:'mahmut'})
+        //setForm({...form,surname:'kılıç'})//name:mahmut,surname:'soyad giriniz' ve sonrasında son setForm işleminden sonraki son durum name:mahmut,surname:'kılıç' burada önce name sonra surname girildiğini düşündüğümüzdeki senaryoyu yazmış olduk(8 ve 9. satırda!).
+
     }
     return(
         <div>
