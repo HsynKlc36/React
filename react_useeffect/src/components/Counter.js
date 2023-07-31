@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react';
 
+//useEffect(()=>{},[]) bu genel kullanımı temsil eder.Bir componentin yaşamaya başlaması ve bitmesi(doğması ve ölmesi) bu anlardaki belli başlı kontroller yapılabilir ya da [] buranın içerisi doldurularak state'lerdeki değişikliklerin olması anında yine kontroller sağlanabilir!
 function Counter(){
     const [number,setNumber]=useState(0);
     // const [name,setName]=useState('hsyn');
@@ -35,4 +36,4 @@ function Counter(){
       </div>
     );
 }
-export default Counter;
+export default Counter; //app.js de bu componenti yakaladık!
