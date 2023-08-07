@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react'
-import axios from 'axios';
+import axios from 'axios';// npm install axios ile paket olarak eklendi
 
 function Users() {
 const [users,setUsers]=useState([]);
