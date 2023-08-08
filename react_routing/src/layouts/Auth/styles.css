@@ -1,0 +1,15 @@
+.auth-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.auth-menu{
+  display: flex;  
+  column-gap: 10px;
+}
+.auth-container a{
+    text-decoration: none;
+}
+/* burada linklere a tagı dememizin sebebi biz link olarak oluştursakta html sayfasında a tagı olarak görünür! */
