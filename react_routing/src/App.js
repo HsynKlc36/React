@@ -12,6 +12,7 @@ import AuthLayout from './layouts/Auth';
 import Register from './pages/Auth/Register';
 import Error404 from './pages/Error404';
 
+
 function App() {
   return (
    <BrowserRouter>

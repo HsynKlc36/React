@@ -5,7 +5,7 @@ import { Link, useParams,useLocation } from 'react-router-dom'// bunun ile ilgil
 function UserDetail() {
     // const params=useParams();
     // console.log(params.id);
-    const location=useLocation();
+    const location=useLocation();//link üzerindeki state'i yakalarız!
     const [userDetail,setUserDetail]=useState(location.state);
     const {id}=useParams();//string olarak gelir.Bu sayede ilgili route üzerindeki ilgili değeri yakalayabiliriz!
      console.log(location);
