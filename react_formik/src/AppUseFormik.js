@@ -1,48 +1,25 @@
 
 import './App.css';
-import { Formik,useFormik, Field, Form } from 'formik';// bu paketi npm install formik diyerek indirip o şekilde kullandık!
-import AppUseFormik from './AppUseFormik';
-import SignUp from './components/SignUp';
-function App() {
-  return (
-    <div className="App">
-      <SignUp/>
-      <hr/>
-      <AppUseFormik/>
-      <hr/>
- <h1>Sign Up(with Formik)</h1>
-    <Formik
-      initialValues={{
+import { useFormik } from 'formik';
+
+function AppUseFormik() {
+    const {handleSubmit,handleChange,values} = useFormik({
+        initialValues: {
         firstName: 'hüseyin',
         lastName: 'kılıç',
         email: 'hsyn@gmail.com',
         gender:'female',//burası radio button olduğu için ilk başta birinin seçili gelmesini istersek burayı doldururuz!Buradaki tüm isimler name'ler ile eşleşmelidir dikkat et!
         hobies:[],// checkbox olduğu için birden fazla seçim yapabilir bu yüzden boş bir array tanımladık!
         country:'turkey'
-      }}
-      onSubmit={ (values) => {   
-        console.log(values);
-      }}
-    >
-      {/* <Form>
-        <label htmlFor="firstName">First Name</label>
-        <Field  name="firstName" placeholder="Jane" />
-          <br/>
-          <br/>
-        <label htmlFor="lastName">Last Name</label>
-        <Field  name="lastName" placeholder="Doe" />
-        <br/>
-          <br/>
-
-        <label htmlFor="email">Email</label>
-        <Field  name="email"  placeholder="jane@acme.com" type="email"/>
-        <br/>
-          <br/>
-        <button type="submit">Submit</button>
-      </Form> */}
-      
-      {({handleSubmit,handleChange,values})=>(
-         <form onSubmit={handleSubmit}>
+        },
+        onSubmit: values => {
+            console.log(values);
+        },
+      });
+  return (
+    <div className='App'>
+ <h1>Sign Up(with useFormik)</h1>
+ <form onSubmit={handleSubmit}>
          <label htmlFor="firstName">First Name</label>
          <input  name="firstName" value={values.firstName} placeholder="Jane" onChange={handleChange} />
            <br/>
@@ -95,14 +72,9 @@ function App() {
           <br/>
           <code>{JSON.stringify(values)}</code>
        </form>
-      )}
-    </Formik>
-       
     </div>
-  );
+  )
 }
 
-export default App;
-//not1:yukarıda formiğin kendi etiketleri olan Form ve Field'ı kullanmayıp kendi etiketlerimizi kullanmak istersek 2. durumu inceleyebilirsiniz!2. durumda formu submit edebilmek için onSubmit özelliğini kullanırken {handleSubmit} çağırırız ayrıca input kullandığımız için değişiklikleri yakalaması içinde onchange özelliğini kullanırsak {handleChange}'i kullanarak inputlardaki değişiklikleride yakalamış oluruz!
-
-//not2: htmlFor'lar id arar buna dikkat et!
+export default AppUseFormik
+//useFormik ile return kısmını daha sade bir şekilde oluşturmamız sağlanır!
