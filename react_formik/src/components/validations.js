@@ -1,4 +1,4 @@
-import * as yup from 'yup';// install add yup diyerek indirip burada kullanırız ve validasyonları yapmamıza olanak sağlar!
+import * as yup from 'yup';// npm install add yup diyerek indirip burada kullanırız ve validasyonları yapmamıza olanak sağlar!
 
 const validations=yup.object().shape({
 email:yup.string().email('geçerli bir email adresi giriniz').required('zorunlu alan'),

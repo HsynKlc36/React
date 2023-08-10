@@ -20,8 +20,9 @@ function App() {
         hobies:[],// checkbox olduğu için birden fazla seçim yapabilir bu yüzden boş bir array tanımladık!
         country:'turkey'
       }}
-      onSubmit={ (values) => {   
+      onSubmit={ (values,bag) => {   
         console.log(values);
+         bag.resetForm() //form submit edildiğinde resetleme yapar!
       }}
     >
       {/* <Form>
