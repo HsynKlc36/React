@@ -53,4 +53,4 @@ export default SignUp;
 
 //burada handleBlur ile hatalı bir değer girmişsem inputa ya da hatalı formatta giriş yapıldıysa bir sonraki inputa focuslandığında hatalı giriş yapılan input için error hata mesajını altında göstermesine yarar!
 
-//values ise formdaki verileri bize verir!
+//values ise formdaki verileri bize verir!yani değişen veriler ya da ilk salt halleri burada tutulur sonrasında inputlarda initial value'lar değiştirilirse bu değerlerde değişir fakat initial value değeri inputta değişikliğe uğramazsa yani o inputa veri girilmezse values içerisinde ilk initialValues'u görürüz!
