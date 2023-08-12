@@ -6,6 +6,10 @@ import Header2 from './components/Header2'
 function App2() {
   const [number,setNumber]=useState(0);
   const [text,setText]=useState('');
+  
+  // const mehmo=useMemo(()=>{
+  //  return setNumber((prevState)=>prevState+1)
+  // },[])//useMemo nesne ve dizi gönderirken useCallback ise function'larda kullanılır!
 
   const increment =useCallback(()=>{
       setNumber((prevState)=>prevState+1)
