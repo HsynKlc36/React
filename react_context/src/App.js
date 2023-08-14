@@ -8,6 +8,7 @@ import { UserProvider } from './context/UserContext';
 function App() {
   return (
     <div className="App">
+     
      <ThemeProvider >
       <UserProvider>
               <Container/>
