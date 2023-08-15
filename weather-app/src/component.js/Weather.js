@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react'
 import { useCity } from '../context.js/CitiesContext';
 import axios from 'axios';
 
+
 function Weather() {
     const {city,cities,setCity}=useCity();
     const [weathers,setWeathers]=useState([])
@@ -12,9 +13,12 @@ function Weather() {
 
     },[city])
   return (
-    <div>
-        {weathers?weathers.map((weather,index)=>(<div key={index}>{JSON.stringify(weather)}</div>)):'loading...'}
-
+    <div >
+      <ul className='style-weather'>
+      {weathers.map((weather,index)=>(
+        <span  key={index}>{JSON.stringify(weather.temp)}</span>
+        ))}
+      </ul>
     </div>
   )
 }

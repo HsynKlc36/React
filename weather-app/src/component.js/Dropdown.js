@@ -11,7 +11,7 @@ function Dropdown() {
     <div>
         <h4>Şehir Seçiniz</h4>
         <label htmlFor="iller">Bir il seçin:</label>
-      <select id="iller" value={city} onChange={cityChange}>
+      <select  value={city} onChange={cityChange}>
         {cities.map((city, index) => (
           <option key={index} value={city}>
             {city}
