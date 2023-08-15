@@ -6,7 +6,7 @@ import {init,subscribe} from './socketApi'
 function App() {
   const [activeColor,setActiveColor]=useState('#282c34')
   useEffect(()=>{
- init();
+ init();//backend server'a bağlantı yapar yani sayfa ilk yüklendiğinde bağlantı yapılacak socketApi componenti ile!
  subscribe(color=>{
   setActiveColor(color);
  });//aboneliği sayfa yüklenirken başlattık!
