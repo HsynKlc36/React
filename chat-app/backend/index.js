@@ -21,9 +21,9 @@ io.on("connection", (socket) => {
 
 	socket.on("new-message", (message) => {
 		console.log(message);
-		Messages.upsert({ message });
+		Messages.upsert({ message });//redise yazar
 
-		socket.broadcast.emit("receive-message", message);
+		socket.broadcast.emit("receive-message", message);//diğer kullanıcıların da bu mesajı almasını sağlar!
 	});
 
 	socket.on("disconnect", () => console.log("a user disconnected"));
@@ -31,4 +31,4 @@ io.on("connection", (socket) => {
 
 http.listen(process.env.PORT || "3000", () => {
 	console.log("listening on *:3000");
-});
+});//burada veritabanı için redis'i dinler ve client' tan veriyi almak içinse 3000 portunu dinler cünkü socket ile client'a 3000 portu üzerinden bağlanır.

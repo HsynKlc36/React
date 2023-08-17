@@ -10,13 +10,26 @@ export const init=()=>{
    
 }
 
-export const send=(color)=>{
-    socket.emit('newColor',color);//client ile server arasında data taşınmasını sağlar.Fakat kanal ve kanala göndereceğiniz datalar uyuşmalıdır karşılıklı!backend tarafından hangi kanalda hangi datayla yakalamanız gerektiğini incelemelisiniz!
-};
-export const  subscribe=(cb)=>{
-    socket.on('receive',(color)=>{
-        console.log(color);
-        cb(color)
-    });
-};//abone oluruz ve receive ile dinleme yaparız! değişen color'ı tüm aboneler yakalar!
-//Not:sunucuya bağlandığımız farklı bir terminal açtık ve oradan backend tarafına backend klasörü dizini üzerinden npm start ile ayağa kaldırdık!Yani bu projede bir backend birde client tarafımız var!
+export const sendMessage=(message)=>{
+    if(socket) socket.emit('new-message',message)
+};//kanala mesaj göndermeye yarar!
+
+
+export const subscribeChat=(cb)=>{
+    if(!socket) return;
+
+    socket.on('receive-message',(message)=>{
+        console.log('yeni mesaj var',message)
+        cb(message);
+    })
+};//kanala abone olup dinleme işlemi yapar!
+
+export const subscribeInitialMessages=(cb)=>{
+    if(!socket) return;
+
+    socket.on('message-list',(messages)=>{
+        console.log('initial',messages)
+        cb(messages);
+    })
+};//kanala abone olup dinleme işlemi yapar!
+
