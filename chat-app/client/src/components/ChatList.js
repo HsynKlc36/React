@@ -4,7 +4,8 @@ import { useChat } from '../context/ChatContext'
 import ChatItem from './ChatItem';
 import ScrollableFeed from 'react-scrollable-feed'// npm add react-scrollable-feed ile paketi yükledik sonra import ettik .Otomotik olarak scroll bar ile sarmalar var her mesajda otomatik olarak en aşağıya iner!
 function ChatList() {
-  const {messages}=useChat();
+  const {messages}=useChat();//redis cache' deki mesajları alırız ve listeleriz!
+ 
   return (
     <div className={styles.chatlist}>
       <ScrollableFeed forceScroll={true}>

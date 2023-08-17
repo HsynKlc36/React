@@ -3,7 +3,7 @@ import {createContext, useState,useContext} from 'react'
 const ChatContext=createContext();
 
 function ChatProvider({children}) {
-    const [messages,setMessages]=useState([]);
+    const [messages,setMessages]=useState([]);//redisten gelen mesajlar!
 const values={
 messages,
 setMessages,
@@ -13,4 +13,4 @@ setMessages,
   )
 }
 const useChat=()=>useContext(ChatContext);
-export {useChat,ChatProvider}
+export {useChat,ChatProvider};

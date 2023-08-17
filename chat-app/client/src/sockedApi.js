@@ -22,7 +22,7 @@ export const subscribeChat=(cb)=>{
         console.log('yeni mesaj var',message)
         cb(message);
     })
-};//kanala abone olup dinleme işlemi yapar!
+};//kanala abone olup dinleme işlemi yapar!anlık mesaj gelirse yakalar!
 
 export const subscribeInitialMessages=(cb)=>{
     if(!socket) return;
@@ -31,5 +31,5 @@ export const subscribeInitialMessages=(cb)=>{
         console.log('initial',messages)
         cb(messages);
     })
-};//kanala abone olup dinleme işlemi yapar!
+};//kanala abone olup dinleme işlemi yapar!redisteki mesaj datalarını çekme işlemi yapar!
 

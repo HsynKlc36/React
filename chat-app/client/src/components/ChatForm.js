@@ -3,8 +3,8 @@ import styles from './styles.module.css'
 import { sendMessage } from '../sockedApi'
 import {useChat} from '../context/ChatContext'
 function ChatForm() {
-  const [message,setMessage]=useState('')
-  const {setMessages}=useChat();
+  const [message,setMessage]=useState('')//inputa girip gönderdiğimiz mesaj
+  const {setMessages}=useChat();//rediste tutulan mesajları burada set etmek istediğimiz için burada yakaladık!
   const handleSubmit=(e)=>{
    e.preventDefault();
    console.log(message);

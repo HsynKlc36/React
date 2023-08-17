@@ -26,6 +26,7 @@ io.on("connection", (socket) => {
 		socket.broadcast.emit("receive-message", message);//diğer kullanıcıların da bu mesajı almasını sağlar!
 	});
 
+
 	socket.on("disconnect", () => console.log("a user disconnected"));
 });
 
