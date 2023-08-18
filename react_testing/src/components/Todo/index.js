@@ -1,28 +1,38 @@
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 const defaultItems=[
     {
         name:'item A'
     },
     {
-        name:'item B'
+        name:'ITEM B'
     },
     {
-        name:'item C'
+        name:'iTem C'
     }
 ]
 function Todo() {
     const [text,setText]=useState('');
     const [items,setItems]=useState(defaultItems);
+
+    useEffect(()=>{
+     setText('');
+    },[items])
   return (
     <div>
-        <input value={text} type='text' name='textInput' onChange={(e)=>{setText(e.target.value)}}></input>
-        <button onClick={()=>{setItems((prev)=>[...prev,text])}}></button>
+        <label>
+            Text
+            <input value={text} type='text' name='textInput' onChange={(e)=>{setText(e.target.value)}}></input>
+        </label>
         <br/>
         <br/>
-        <h2>Items</h2>
+        <button onClick={()=>{setItems((prev)=>[...prev,{name:text}])}}>Click</button>
+        <br/>
+        <br/>
         {items.map((item,index)=>{
-          return <span key={index}>{item.name}</span>
+          return <div key={index}>{item.name}</div>
         })}
+
+       
     </div>
   )
 }
