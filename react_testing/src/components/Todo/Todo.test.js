@@ -28,6 +28,7 @@ describe('Todo Test',()=>{
      //ardından butona tıkladık
         fireEvent.click(todoBtn)
         //assertion
+       
         expect(screen.getByText(name)).toBeInTheDocument();//dom da bulunup bulunmadığını kontrol eder!
      });
      
