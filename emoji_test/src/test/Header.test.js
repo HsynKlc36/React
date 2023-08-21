@@ -8,7 +8,7 @@ describe('Header Test',()=>{
      beforeEach(()=>{
          render(<Header/>);
          header=screen.getByText(/emoji Search/i)
-
+         console.log(header);
      });
  test('başlık kısmının başarılı bir şekilde render edildiğini test et!', () => { 
     expect(header).toBeInTheDocument();

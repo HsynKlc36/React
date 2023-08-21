@@ -27,8 +27,7 @@ describe('Todo Test',()=>{
         userEvent.type(input,name)//bunun ile o inputu doldurabildik!
      //ardından butona tıkladık
         fireEvent.click(todoBtn)
-        //assertion
-       
+        //assertion      
         expect(screen.getByText(name)).toBeInTheDocument();//dom da bulunup bulunmadığını kontrol eder!
      });
      

@@ -23,12 +23,12 @@ function App() {
  },[locale])
   return (
     <div className="App">
-      <IntlProvider locale={locale} messages={messages[locale]}>
+      <IntlProvider locale={locale} messages={messages[locale]}> 
         <FormattedMessage id='title' />
         <br/>
         <br/>
         <p>
-        <FormattedMessage id='description' values={{count:5}}/>
+        <FormattedMessage id='description' values={{count:10}}/>
         </p>
         <button onClick={()=>setLocale('tr-TR')}>TR</button>
         <button onClick={()=>setLocale('en-US')}>EN</button>
@@ -42,3 +42,5 @@ function App() {
 }
 
 export default App;
+//Not: locale ve messages IntlProvider'ın props'larıdır!
+//messages =>  nesne olmalıdır!

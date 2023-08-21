@@ -16,6 +16,7 @@ function Todo() {
 
     useEffect(()=>{
      setText('');
+     console.log(items)
     },[items])
   return (
     <div>

@@ -19,7 +19,11 @@ export default class SearchInput extends PureComponent {
         <label className="inputTest">
             inputTest
               <input onChange={this.handleChange} id="input"/>             
-          </label>
+          </label>         
+          <div>
+             kamil
+            <input id='mahmut'></input>
+          </div>
         </div>
       </div>
     );
