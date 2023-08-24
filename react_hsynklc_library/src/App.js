@@ -1,25 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import {Paragraph,Button} from 'hsynklc' //kendi yazdığımız kütüphaneyi indirdik . npm install hsynklc --force ile!
+import 'hsynklc/dist/index.css' // library' nin css lerini kullanabilmek için!
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Paragraph text='bu paragraph componentinin textidir! ve bunu hsynklc library sini yükleyerek kullanıyorum!'/>
+      <Button text='click' onClick={()=>alert('hsynklc kütüphanesinden gelen alertim!')}/>
     </div>
   );
 }
 
 export default App;
+
+//oluşturduğumuz hsynklc kütüphanesini bu projede npm i hsynklc --force diyerek kullandık --force dememizin sebebi versiyon farklılığı oldu!!
